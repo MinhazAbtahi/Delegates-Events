@@ -6,7 +6,7 @@ window_manager = wmi.WMI ()
 for os in window_manager.Win32_OperatingSystem():
 	print ("OS: " + os.Caption + '\n')
 	
-# prints newly created processes
+# process watchers
 active_process_watcher = window_manager.Win32_Process.watch_for("operation")
 stopped_process_watcher = window_manager.Win32_Process.watch_for("deletion")
 new_process_watcher = window_manager.Win32_Process.watch_for("creation")
